@@ -1,0 +1,14 @@
+helloworld.admin:
+  title: 'Hello World Settings Page'
+  description: 'Settings page link for the hello world module'
+  parent: system.admin_config_development
+  route_name: helloworld.admin_settings
+  weight: 100
+
+helloworld.page:
+  title: 'Hello World Content Page'
+  description: 'Settings page link for the hello world module'
+  menu_name: main
+  parent: system.admin_config_helloworld
+  route_name: helloworld.content
+  weight: 100

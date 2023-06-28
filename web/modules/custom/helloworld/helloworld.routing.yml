@@ -1,0 +1,16 @@
+helloworld.admin_settings:
+  path: '/admin/config/helloworld'
+  defaults:
+    _form: '\Drupal\helloworld\Form\HelloworldSettingsForm'
+    _title: 'Hello World Module Settings'
+  requirements:
+    _permission: 'administer custom module'
+
+
+helloworld.content:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\helloworld\Controller\HelloController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'view custom module config page'
