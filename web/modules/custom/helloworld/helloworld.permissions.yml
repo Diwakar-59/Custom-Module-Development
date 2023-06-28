@@ -1,0 +1,7 @@
+administer custom module:
+  title: 'Administer Custom Module'
+  description: 'Perform administrative tasks for the Custom Module'
+
+view custom module config page:
+  title: 'View Custom Module Page'
+  description: 'View the pages of the Custom Module'

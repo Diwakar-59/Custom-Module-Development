@@ -1,0 +1,8 @@
+uuid: 453657f2-8bfc-4ab7-ac8e-92478e1740ef
+langcode: en
+status: true
+dependencies: {  }
+name: Products
+vid: products
+description: 'Products available on the site'
+weight: 0

@@ -1,0 +1,21 @@
+uuid: 80888c85-ed8f-471c-a431-1371976dccca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partner_brands
+    - node.type.page
+  module:
+    - options
+id: node.page.field_partner_brands
+field_name: field_partner_brands
+entity_type: node
+bundle: page
+label: 'Partner Brands'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: 5387ce4c-3c5f-42b6-9535-ca3dd49f517e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_quotation
+    - node.type.products
+  module:
+    - text
+id: node.products.field_quotation
+field_name: field_quotation
+entity_type: node
+bundle: products
+label: Quotation
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

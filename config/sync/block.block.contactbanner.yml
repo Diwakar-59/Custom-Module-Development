@@ -1,0 +1,30 @@
+uuid: f4767490-9ce9-47bf-a107-f054d0a22f43
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:banner:06b56773-5535-467e-8dac-51700cd5d60b'
+  module:
+    - block_content
+    - system
+  theme:
+    - olivero
+id: contactbanner
+theme: olivero
+region: content_above
+weight: 0
+provider: null
+plugin: 'block_content:06b56773-5535-467e-8dac-51700cd5d60b'
+settings:
+  id: 'block_content:06b56773-5535-467e-8dac-51700cd5d60b'
+  label: 'contact banner'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /contact
