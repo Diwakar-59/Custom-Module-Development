@@ -1,0 +1,15 @@
+routing_module.content:
+  path: '/routing'
+  defaults: 
+    _controller: 'Drupal\routing_module\Controller\RoutingController::content'
+    _title: 'Routing Task Module'
+  requirements:
+    _permission: 'access content'
+
+routing_module.dynamic:
+  path: '/routing/{slug}'
+  defaults: 
+    _controller: 'Drupal\routing_module\Controller\RoutingController::content'
+    _title: 'Routing Task Module'
+  requirements:
+    _permission: 'access content'
