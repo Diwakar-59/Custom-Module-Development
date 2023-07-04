@@ -13,3 +13,4 @@ routing_module.dynamic:
     _title: 'Routing Task Module'
   requirements:
     _permission: 'access content'
+    slug: '[0-9]+'

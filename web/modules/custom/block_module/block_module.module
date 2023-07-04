@@ -1,0 +1,41 @@
+<?php 
+
+/**
+ * @file
+ * Implements the functionality to change the landing page after login 
+ * using hooks.
+ */
+
+use Symfony\Component\HttpFoundation\RedirectResponse;;
+use Drupal\user\UserInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function block_module_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#submit'][] = 'block_module_user_login_form_submit';
+}
+
+/**
+ * Custom submit handler for the login form.
+ */
+function block_module_user_login_form_submit($form, FormStateInterface $form_state) {
+  $url = Url::fromRoute('block_module.custom_welcome_page');
+
+  // Create a redirect response to the custom welcome page.
+  $form_state->setRedirectUrl($url);
+
+  // Send the redirect response.
+  // $response->send();
+
+}
+
+// function block_module_user_login(UserInterface $account) {
+//   if (!in_array('administrator', $account->getRoles())) {
+//     $response = new Symfony\Component\HttpFoundation\RedirectResponse('/custom-welcome-page');
+//     $response->send();
+//     return;
+//   }
+// }
