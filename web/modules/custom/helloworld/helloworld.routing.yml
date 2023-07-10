@@ -6,7 +6,6 @@ helloworld.admin_settings:
   requirements:
     _permission: 'administer custom module'
 
-
 helloworld.content:
   path: '/hello'
   defaults:

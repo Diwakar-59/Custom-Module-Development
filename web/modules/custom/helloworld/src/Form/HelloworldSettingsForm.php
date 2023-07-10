@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
   /**
    * Class to handle the configuration form of the helloworld custom module.
    */
-class HelloworldSettingsForm extends ConfigFormBase {
+  class HelloworldSettingsForm extends ConfigFormBase {
 
   /**
    * Function to get the form id of the configure form.
@@ -31,7 +31,8 @@ class HelloworldSettingsForm extends ConfigFormBase {
    * Function responsible for building the form elements.
    *
    * @param array $form
-   * @param FormStateInterface $form_state
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The FormStateInterface object.
    * @return array 
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
@@ -59,11 +60,50 @@ class HelloworldSettingsForm extends ConfigFormBase {
     $form['gender'] = [
       '#type' => 'radios',
       '#options' => array(
-        'Male' => $this->t('Male'), 
-        'Female' => $this->t('Female'), 
-        'Others' => $this->t('Others')),
+        'male' => $this->t('Male'), 
+        'female' => $this->t('Female'), 
+        'others' => $this->t('Others')
+      ),
       '#title' => 'Gender',
-      '#default_value' => $this->config('helloworld.admin_settings')->get('gender'),
+      '#attributes' => [
+        'id' => 'gender_field',
+      ],
+    ];
+    $form['male'] = [
+      '#type' => 'textfield',
+      '#size' => 60,
+      '#title' => "Father's Name",
+      '#placeholder' => 'Enter your nominee name.',
+      '#attributes' => [
+        'id' => 'male_nominee',
+      ],
+      '#states' => [
+        'visible' => [':input[id="gender_field"]' => ['value' => 'male']],
+      ],
+    ];
+    $form['female'] = [
+      '#type' => 'textfield',
+      '#size' => 60,
+      '#title' => "Husband's Name",
+      '#placeholder' => 'Enter your nominee name.',
+      '#attributes' => [
+        'id' => 'female_nominee',
+      ],
+      '#states' => [
+        'visible' => [':input[id="gender_field"]' => ['value' => 'female']],
+      ],
+    ];
+    $form['other'] = [
+      '#type' => 'textfield',
+      '#size' => 60,
+      '#title' => "Nominee Name",
+      '#placeholder' => 'Enter your nominee name.',
+      '#attributes' => [
+        'id' => 'other_nominee',
+      ],
+      '#states' => [
+        'visible' => [':input[id="gender_field"]' => ['value' => 'others']],
+      ],
     ];
 
     return parent::buildForm($form, $form_state);
@@ -73,7 +113,8 @@ class HelloworldSettingsForm extends ConfigFormBase {
    * Function for validating the form inputs.
    *
    * @param array $form
-   * @param FormStateInterface $form_state
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The FormStateInterface object.
    * @return void
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
@@ -90,12 +131,12 @@ class HelloworldSettingsForm extends ConfigFormBase {
       }
   }
 
-
   /**
    * Fuction to handle the submission of the form and updating the fields data.
    *
    * @param array $form
-   * @param FormStateInterface $form_state
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The FormStateInterface object.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('helloworld.admin_settings')
@@ -103,9 +144,7 @@ class HelloworldSettingsForm extends ConfigFormBase {
     ->set('email', $form_state->getValue('email'))
     ->set('phone_number', $form_state->getValue('phone_number'))
     ->set('gender', $form_state->getValue('gender'))
-
     ->save();
     parent::submitForm($form, $form_state);
-
   }
 }
