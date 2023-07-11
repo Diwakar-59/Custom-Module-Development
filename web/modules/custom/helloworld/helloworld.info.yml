@@ -1,0 +1,6 @@
+name: Hello world
+type: module
+description: My custom Hello World module for Drupal 10.
+package: Custom Module
+core_version_requirement: ^10
+configure: helloworld.admin_settings

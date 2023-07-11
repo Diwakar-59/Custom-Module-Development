@@ -1,0 +1,7 @@
+administer module:
+  title: 'Administer Routing Module'
+  description: 'Perform administrative tasks for the Routing Module'
+
+access custom page:
+  title: 'View Custom Module Page'
+  description: 'View the pages'

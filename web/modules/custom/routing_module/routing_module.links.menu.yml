@@ -1,0 +1,6 @@
+routing_module.page:
+  title: 'Routing Module Page'
+  description: 'Content Page link for the Routing module'
+  menu_name: main
+  route_name: routing_module.content
+  weight: 100

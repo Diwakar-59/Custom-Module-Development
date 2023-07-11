@@ -1,0 +1,17 @@
+uuid: 075201bc-9e75-4d55-997a-795485669e3d
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: dev
+description: ''
+weight: 0
+folder: ../config/dev
+module:
+  entityqueue: 0
+theme: {  }
+blacklist:
+  - system.site
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

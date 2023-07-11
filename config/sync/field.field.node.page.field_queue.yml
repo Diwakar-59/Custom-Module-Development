@@ -1,0 +1,29 @@
+uuid: d4eea7c1-4b4a-4ee2-ba22-02c1e15d88f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_queue
+    - node.type.page
+    - node.type.products
+id: node.page.field_queue
+field_name: field_queue
+entity_type: node
+bundle: page
+label: 'Top 3 Products'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      products: products
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

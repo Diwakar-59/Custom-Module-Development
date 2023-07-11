@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Implements hooks.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function helloworld_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_news_form') {
+    $form['actions']['submit']['#value'] = t('Save this news');
+  }
+
+  if ($form_id == 'helloworld_admin_settings') {
+    $form['actions']['submit']['#value'] = t('Lock');
+    $form['actions']['submit']['#ajax'] = [
+      'callback' => '\Drupal\helloworld\Form\HelloworldSettingsForm::submitForm',
+    ];
+  }
+}

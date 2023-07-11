@@ -1,0 +1,127 @@
+uuid: 85363d2a-8c67-4401-ac69-88a406a97233
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.page.body
+    - field.field.node.page.field_banner
+    - field.field.node.page.field_partner_brands
+    - field.field.node.page.field_queue
+    - node.type.page
+  module:
+    - image
+    - layout_builder
+    - layout_discovery
+    - options
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          8c07ee0e-cda4-411c-9c8d-7e3b44a4595d:
+            uuid: 8c07ee0e-cda4-411c-9c8d-7e3b44a4595d
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_banner'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          11284f61-f243-47ad-9a96-29d4602eae70:
+            uuid: 11284f61-f243-47ad-9a96-29d4602eae70
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          9a7c9091-fce6-49f5-a0f0-52b60829d041:
+            uuid: 9a7c9091-fce6-49f5-a0f0-52b60829d041
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+          301cba4d-5886-4c54-a370-106a95d3cc64:
+            uuid: 301cba4d-5886-4c54-a370-106a95d3cc64
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_partner_brands'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+id: node.page.full
+targetEntityType: node
+bundle: page
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_banner:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_partner_brands:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_queue: true

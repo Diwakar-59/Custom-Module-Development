@@ -1,0 +1,8 @@
+uuid: 3ebce610-4fe8-4db5-ab03-51ef5a7ebdba
+langcode: en
+status: true
+dependencies: {  }
+id: hero-menu
+label: 'Hero Menu'
+description: 'Menu for traversing through the site pages.'
+locked: false
