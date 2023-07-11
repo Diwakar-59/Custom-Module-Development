@@ -1,22 +1,16 @@
-<?php 
-
-use Drupal\Core\StringTranslation\StringTranslationTrait;
+<?php
 
 /**
  * @file
  * Implements hooks.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook form alter.
- *
- * @param array $form
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- * @param string $form_id
- * @return void
+ * Implements hook_form_alter().
  */
-function helloworld_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function helloworld_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'node_news_form') {
     $form['actions']['submit']['#value'] = t('Save this news');
   }
@@ -24,6 +18,7 @@ function helloworld_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
   if ($form_id == 'helloworld_admin_settings') {
     $form['actions']['submit']['#value'] = t('Lock');
     $form['actions']['submit']['#ajax'] = [
-      'callback' => '\Drupal\helloworld\Form\HelloworldSettingsForm::submitForm'];
+      'callback' => '\Drupal\helloworld\Form\HelloworldSettingsForm::submitForm',
+    ];
   }
 }

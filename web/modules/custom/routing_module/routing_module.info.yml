@@ -2,5 +2,4 @@ name: Routing Module
 type: module
 description: My custom for routing related tasks Drupal 10.
 package: Custom Module
-version: 1.0
 core_version_requirement: ^10
