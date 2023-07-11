@@ -1,0 +1,7 @@
+block_module.custom_welcome_page:
+  path: '/custom-welcome-page'
+  defaults: 
+    _controller: 'Drupal\block_module\Controller\BlockController::content'
+    _title: 'Custom Page for Block Task Module'
+  requirements:
+    _permission: 'access content'

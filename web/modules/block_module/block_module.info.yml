@@ -1,0 +1,7 @@
+name: Intro to Block Module
+type: module
+description: My custom module for block related tasks in Drupal 10.
+package: Custom Module
+core_version_requirement: ^10
+dependencies:
+  - drupal:block
