@@ -1,18 +1,20 @@
-<?php 
+<?php
 
 namespace Drupal\helloworld\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-  /**
-   * Class to handle the configuration form of the helloworld custom module.
-   */
-  class HelloworldSettingsForm extends ConfigFormBase {
+/**
+ * Class to handle the configuration form of the helloworld custom module.
+ */
+class HelloworldSettingsForm extends ConfigFormBase {
 
   /**
    * Function to get the form id of the configure form.
+   *
    * @return string
+   *   Returns the from id.
    */
   public function getFormId() {
     return 'helloworld_admin_settings';
@@ -31,9 +33,12 @@ use Drupal\Core\Form\FormStateInterface;
    * Function responsible for building the form elements.
    *
    * @param array $form
+   *   Stores the form elements as an array.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The FormStateInterface object.
-   * @return array 
+   *
+   * @return array
+   *   Returns the form structure.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['full_name'] = [
@@ -48,22 +53,22 @@ use Drupal\Core\Form\FormStateInterface;
       '#title' => 'Phone Number',
       '#default_value' => $this->config(
         'helloworld.admin_settings')->get('phone_number'),
-    ];    
+    ];
     $form['email'] = [
       '#type' => 'email',
       '#title' => 'Email ID',
       '#default_value' => $this->config(
         'helloworld.admin_settings')->get('email'),
-      '#patterns' => array('*@gmail.com', '*@yahoo.com', '*@outlook.com'),
+      '#patterns' => ['*@gmail.com', '*@yahoo.com', '*@outlook.com'],
       '#required' => TRUE,
-    ];   
+    ];
     $form['gender'] = [
       '#type' => 'radios',
-      '#options' => array(
-        'male' => $this->t('Male'), 
-        'female' => $this->t('Female'), 
-        'others' => $this->t('Others')
-      ),
+      '#options' => [
+        'male' => $this->t('Male'),
+        'female' => $this->t('Female'),
+        'others' => $this->t('Others'),
+      ],
       '#title' => 'Gender',
       '#attributes' => [
         'id' => 'gender_field',
@@ -113,38 +118,35 @@ use Drupal\Core\Form\FormStateInterface;
    * Function for validating the form inputs.
    *
    * @param array $form
+   *   Stores the form structure in an array.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The FormStateInterface object.
-   * @return void
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    if(!preg_match('/^[0-9]{10}+$/', $form_state->getValue('phone_number'))) {
+    if (!preg_match('/^[0-9]{10}+$/', $form_state->getValue('phone_number'))) {
       $form_state->setErrorByName(
         'phone_number', $this->t('Enter a valid 10 digit number'));
     }
 
-    if(!preg_match(
-      '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/', 
+    if (!preg_match(
+      '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/',
       $form_state->getValue('email'))) {
-        $form_state->setErrorByName(
-          'email', $this->t('Enter a valid email address!!'));
-      }
+      $form_state->setErrorByName(
+      'email', $this->t('Enter a valid email address!!'));
+    }
   }
 
   /**
-   * Fuction to handle the submission of the form and updating the fields data.
-   *
-   * @param array $form
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The FormStateInterface object.
+   * {@inheritDoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('helloworld.admin_settings')
-    ->set('full_name', $form_state->getValue('full_name'))
-    ->set('email', $form_state->getValue('email'))
-    ->set('phone_number', $form_state->getValue('phone_number'))
-    ->set('gender', $form_state->getValue('gender'))
-    ->save();
+      ->set('full_name', $form_state->getValue('full_name'))
+      ->set('email', $form_state->getValue('email'))
+      ->set('phone_number', $form_state->getValue('phone_number'))
+      ->set('gender', $form_state->getValue('gender'))
+      ->save();
     parent::submitForm($form, $form_state);
   }
+
 }

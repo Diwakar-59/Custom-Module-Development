@@ -2,9 +2,5 @@ name: Hello world
 type: module
 description: My custom Hello World module for Drupal 10.
 package: Custom Module
-version: 1.0
 core_version_requirement: ^10
 configure: helloworld.admin_settings
-dependencies:
-  - drupal:views
-  - drupal:media
