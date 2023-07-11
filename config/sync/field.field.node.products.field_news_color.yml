@@ -1,0 +1,21 @@
+uuid: 79b4eb15-8210-4433-9450-ced944d41f9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_color
+    - node.type.products
+  module:
+    - block_module
+id: node.products.field_news_color
+field_name: field_news_color
+entity_type: node
+bundle: products
+label: 'news color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: color_item

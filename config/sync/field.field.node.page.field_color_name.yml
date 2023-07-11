@@ -1,0 +1,21 @@
+uuid: 3eec61b1-2eb9-447d-9cbc-7b8aaf30cb01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color_name
+    - node.type.page
+  module:
+    - block_module
+id: node.page.field_color_name
+field_name: field_color_name
+entity_type: node
+bundle: page
+label: 'Color name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: color_item

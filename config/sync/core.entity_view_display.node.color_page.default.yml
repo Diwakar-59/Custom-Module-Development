@@ -1,0 +1,37 @@
+uuid: 9ebb1240-e1aa-4563-a02f-c63ac9121d4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.color_page.body
+    - field.field.node.color_page.field_page_colour
+    - node.type.color_page
+  module:
+    - block_module
+    - text
+    - user
+id: node.color_page.default
+targetEntityType: node
+bundle: color_page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_page_colour:
+    type: color_background
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -1,0 +1,17 @@
+uuid: 9195e6a0-4b91-497a-af59-4dc0fdc526b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Color Page'
+type: color_page
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

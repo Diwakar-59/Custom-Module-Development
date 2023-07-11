@@ -1,0 +1,23 @@
+uuid: 60551beb-898e-4808-8f7a-168b438c4f78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.color_page
+  module:
+    - text
+id: node.color_page.body
+field_name: body
+entity_type: node
+bundle: color_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
