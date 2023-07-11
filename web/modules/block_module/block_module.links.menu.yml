@@ -1,6 +1,0 @@
-block_module.page:
-  title: 'Block Module Page'
-  description: 'Content Page link for the Block module'
-  menu_name: main
-  route_name: block_module.custom_welcome_page
-  weight: 100

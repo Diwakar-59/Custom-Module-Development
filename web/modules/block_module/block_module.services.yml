@@ -1,3 +1,0 @@
-services:
-  block_module.useremail_service:
-    class: Drupal\block_module\Services\UserEmail
