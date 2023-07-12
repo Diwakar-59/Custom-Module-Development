@@ -1,0 +1,5 @@
+name: Intro to Custom Fields
+type: module
+description: My custom module for color field tasks in Drupal 10.
+package: Custom Module
+core_version_requirement: ^10
