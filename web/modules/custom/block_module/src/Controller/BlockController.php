@@ -1,26 +1,50 @@
-<?php 
+<?php
 
 namespace Drupal\block_module\Controller;
 
-
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * @inheritDoc
+ * Class to display the customblock on content page.
  */
 class BlockController extends ControllerBase {
+
+  /**
+   * Stores the current user object.
+   *
+   * @var object
+   */
+  protected $user;
+
+  /**
+   * {@inheritDoc}
+   */
+  public function __construct($user) {
+    $this->user = $user;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('block_module.useremail_service')
+    );
+  }
 
   /**
    * Creates a content page with basic markup displayed on the page.
    *
    * @return array
+   *   Returns a markup array to render dynamic statements coming from service.
    */
   public function content() {
     return [
       '#type' => 'markup',
-      '#markup' => 'This is the custom page where the custom block is displayed!!',
+      '#markup' => $this->t('This is the custom page where the custom block is displayed!!<br>
+                            @value!', ['@value' => $this->user->result()]),
     ];
   }
+
 }
