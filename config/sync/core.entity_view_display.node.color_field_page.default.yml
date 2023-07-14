@@ -1,0 +1,37 @@
+uuid: a2805b8a-e7fa-4dc0-8e40-220784a98ba9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.color_field_page.body
+    - field.field.node.color_field_page.field_clr_field
+    - node.type.color_field_page
+  module:
+    - customfield_module
+    - text
+    - user
+id: node.color_field_page.default
+targetEntityType: node
+bundle: color_field_page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_clr_field:
+    type: color_background_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

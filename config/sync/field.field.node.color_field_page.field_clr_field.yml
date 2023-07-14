@@ -1,0 +1,26 @@
+uuid: a97a558c-59bb-4a8a-8a3e-bfa3ff8128c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clr_field
+    - node.type.color_field_page
+  module:
+    - customfield_module
+id: node.color_field_page.field_clr_field
+field_name: field_clr_field
+entity_type: node
+bundle: color_field_page
+label: 'clr field'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    hex_code: null
+    red: '0'
+    green: '0'
+    blue: '0'
+default_value_callback: ''
+settings: {  }
+field_type: custom_color_field

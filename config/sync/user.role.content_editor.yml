@@ -9,8 +9,10 @@ dependencies:
     - comment
     - contextual
     - file
+    - helloworld
     - node
     - path
+    - routing_module
     - system
     - taxonomy
     - toolbar
@@ -25,6 +27,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
+  - 'access custom page'
   - 'access files overview'
   - 'access toolbar'
   - 'access tour'
@@ -39,5 +42,6 @@ permissions:
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'view all revisions'
+  - 'view custom module config page'
   - 'view own unpublished content'
   - 'view the administration theme'

@@ -1,0 +1,22 @@
+uuid: 7d3ad474-7f4f-4a8e-82c8-9d6b490c4049
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.color_field_page
+id: node.color_field_page.status
+field_name: status
+entity_type: node
+bundle: color_field_page
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

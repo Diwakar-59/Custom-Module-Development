@@ -1,0 +1,23 @@
+uuid: 134be077-1134-472e-8107-90f7733479e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.color_data
+  module:
+    - text
+id: node.color_data.body
+field_name: body
+entity_type: node
+bundle: color_data
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
