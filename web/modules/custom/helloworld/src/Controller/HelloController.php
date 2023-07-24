@@ -2,9 +2,9 @@
 
 namespace Drupal\helloworld\Controller;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Session\AccountInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
@@ -37,6 +37,7 @@ class HelloController extends ControllerBase {
       $container->get('current_user')
     );
   }
+
 
   /**
    * Display the markup.

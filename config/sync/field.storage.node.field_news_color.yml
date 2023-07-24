@@ -1,0 +1,19 @@
+uuid: dafd57df-0cfa-4a80-9b03-6bbbec405804
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_module
+    - node
+id: node.field_news_color
+field_name: field_news_color
+entity_type: node
+type: color_item
+settings: {  }
+module: block_module
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
