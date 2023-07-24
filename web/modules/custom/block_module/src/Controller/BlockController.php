@@ -2,7 +2,9 @@
 
 namespace Drupal\block_module\Controller;
 
+use Drupal\block_module\Services\UserEmail;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -20,7 +22,7 @@ class BlockController extends ControllerBase {
   /**
    * {@inheritDoc}
    */
-  public function __construct($user) {
+  public function __construct(UserEmail $user) {
     $this->user = $user;
   }
 

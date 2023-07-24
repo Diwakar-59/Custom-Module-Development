@@ -27,7 +27,8 @@ class UserWelcomeBlock extends BlockBase implements ContainerFactoryPluginInterf
   /**
    * {@inheritDoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_defination, AccountInterface $account) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, AccountInterface $account) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->account = $account;
   }
 
@@ -47,11 +48,8 @@ class UserWelcomeBlock extends BlockBase implements ContainerFactoryPluginInterf
    * {@inheritDoc}
    */
   public function build() {
-    $userrole = $this->account->getRoles();
-    $roles = '';
-    foreach ($userrole as $role) {
-      $roles .= $role . '<br>';
-    }
+    $user_roles = $this->account->getRoles();
+    $roles = implode('<br>', $user_roles);
     return [
       '#type' => 'markup',
       '#markup' => $this->t('Welcome  <br>') . $roles,

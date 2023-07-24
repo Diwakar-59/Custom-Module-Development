@@ -6,12 +6,6 @@ namespace Drupal\block_module\Services;
  * Class to implement a custom service.
  */
 class UserEmail {
-  /**
-   * Variable to store a message.
-   *
-   * @var string
-   */
-  protected $user;
 
   /**
    * Function  to return a string response.
