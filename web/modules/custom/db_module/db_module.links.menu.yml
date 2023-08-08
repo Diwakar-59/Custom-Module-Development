@@ -1,0 +1,13 @@
+db_module.dashboard:
+  title: 'Dashboard Page'
+  description: 'Dashboard link for the DB module'
+  menu_name: main
+  route_name: db_module.dashboard
+  weight: 100
+
+db_module.taxonomy:
+  title: 'Taxonomy Term Details Page'
+  description: 'link for the Taxonomy term details page'
+  menu_name: main
+  route_name: db_module.taxonomy
+  weight: 100

@@ -1,0 +1,15 @@
+db_module.dashboard:
+  path: '/dashboard'
+  defaults: 
+    _controller: 'Drupal\db_module\Controller\DashboardController::content'
+    _title: 'Dashboard'
+  requirements:
+    _permission: 'access content'
+
+db_module.taxonomy:
+  path: '/taxonomy'
+  defaults:
+    _title: 'Taxonomy Term Details'
+    _form: 'Drupal\db_module\Form\TaxonomyForm'
+  requirements:
+    _permission: 'access content'
