@@ -1,0 +1,7 @@
+name: DB Module
+type: module
+description: My custom module for DB task.
+package: Custom Module
+core_version_requirement: ^10
+js:
+  js/validation.js: {}

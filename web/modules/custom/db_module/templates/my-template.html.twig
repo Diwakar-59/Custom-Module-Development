@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard ka Page</title>
+</head>
+<body>
+  <div class="year">
+    <h2>Events by Year!!!</h2>
+  
+    <table class="table">
+      <tr bgcolor="#ffffff">
+        <th>Year</th>
+        <th>Number of Events</th>
+      </tr>
+      {% for item in event_per_year %}
+        <tr bgcolor="#ffffff">
+          <td>{{ item['Year'] }}</td>
+          <td>{{ item['Events'] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <div class="quarter">
+    <h2>Events by Quarter!!!</h2>
+
+    <table class="table">
+      <tr bgcolor="#ffffff">
+        <th>Quarter</th>
+        <th>Number of Events</th>
+      </tr>
+      {% for item in event_per_quarter %}
+        <tr bgcolor="#ffffff">
+          <td>{{ item['Quarter'] }}</td>
+          <td>{{ item['Events'] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <div class="type">
+    <h2>Events by Type!!!</h2>
+
+    <table class="table">
+      <tr bgcolor="#ffffff">
+        <th>Type</th>
+        <th>Count of Events</th>
+      </tr>
+      {% for item in event_per_type %}
+        <tr bgcolor="#ffffff">
+          <td>{{ item['field_type_value'] }}</td>
+          <td>{{ item['Events'] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+</body>
+</html>
