@@ -1,0 +1,17 @@
+uuid: cb0352da-a229-45e3-89df-f76344572486
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'color field page'
+type: color_field_page
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

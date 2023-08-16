@@ -1,0 +1,19 @@
+uuid: a9501877-a303-4ed8-9fce-3443b5f328dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - customfield_module
+    - node
+id: node.field_clr_field
+field_name: field_clr_field
+entity_type: node
+type: custom_color_field
+settings: {  }
+module: customfield_module
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
